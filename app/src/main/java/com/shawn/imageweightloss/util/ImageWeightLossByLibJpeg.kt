@@ -4,7 +4,7 @@ import android.graphics.Bitmap
 
 object ImageWeightLossByLibJpeg {
     external fun compressBitmap(
-        bitmap: Bitmap?, quality: Int,
+        bitmap: Bitmap, quality: Int,
         outFilPath: String?,
         optimize: Boolean
     ): Int
