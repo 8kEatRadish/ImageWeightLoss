@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.annotation.RequiresApi
+import androidx.core.view.doOnPreDraw
 import androidx.lifecycle.lifecycleScope
 import com.shawn.imageweightloss.databinding.ActivityMainBinding
 import com.shawn.imageweightloss.util.ImageWeightLossByLibJpeg
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        
         lifecycleScope.launch(Dispatchers.IO) {
 
             var inputStream: InputStream? = null
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
 
             try {
-                inputStream = resources.assets.open("img")
+                inputStream = resources.assets.open("img2")
                 file = File(getExternalFilesDir(null), "test")
                 fos = FileOutputStream(file)
                 val buffer = ByteArray(4096)

@@ -10,6 +10,8 @@ object ImageWeightLossByLibJpeg {
      * @param quality 0-100
      * @param outFilPath 输出地址
      * @param optimize TRUE=arithmetic coding, FALSE=Huffman
+     * @return -1:失败；0:成功
+     * @note 需要异步执行
      */
     external fun compressBitmap(
         bitmap: Bitmap, quality: Int,
